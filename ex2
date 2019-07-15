@@ -1,0 +1,21 @@
+#Cada término en la serie de Fibonacci es generado a partir de la suma de los dos términos previos, empezando de 1 y 2, los diez primeros #términos serán: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, … Considerando los términos de la serie de Fibonacci que son impares, y por debajo de un #millón encuentre la suma de dichos términos.
+
+
+def fib(n):
+  f=[1,2]
+  if n==1:
+   return f[0]
+  if n==2:
+   return [1,2]
+
+  for k in range(3,n+1):
+   f.append(f[k-2]+f[k-3])
+  return f
+
+for i in range(3,40):
+ if fib(i)[-1]>1000000:
+  lim=i
+  break
+
+print(sum([x for x in fib(lim-1) if x%2==1]))
+print(fib(30))

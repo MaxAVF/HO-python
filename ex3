@@ -1,0 +1,10 @@
+def prim_factors(n):
+  factors=[]
+  for i in range(2,n):
+   if (n%i==0):
+    n=n//i
+    factors.append(i)
+  
+  return factors # [x for x in factors if prim_factors(x)==[]]
+
+print(prim_factors(600851475143))
